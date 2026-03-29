@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: api-gateway
+    runtime: docker
+    dockerfilePath: Dockerfile
+    dockerContext: .
+    plan: free
+    region: oregon
+    healthCheckPath: /v1/models
+    envVars:
+      - key: PORT
+        value: "8080"
